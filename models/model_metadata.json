@@ -1,0 +1,32 @@
+{
+    "modelo": "GradientBoostingClassifier",
+    "fecha_entrenamiento": "2026-05-22 10:44:35",
+    "hiperparametros": {
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 1.0
+    },
+    "metricas_test": {
+        "accuracy": 0.7403,
+        "roc_auc": 0.823,
+        "f1_score": 0.5918,
+        "precision": 0.6591,
+        "recall": 0.537
+    },
+    "dataset": {
+        "total_muestras": 768,
+        "train_size": 614,
+        "test_size": 154,
+        "features": [
+            "Pregnancies",
+            "Glucose",
+            "BloodPressure",
+            "SkinThickness",
+            "Insulin",
+            "BMI",
+            "DiabetesPedigreeFunction",
+            "Age"
+        ]
+    }
+}
