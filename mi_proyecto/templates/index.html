@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Flores Iris</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FF1E56, #7C4DFF, #00E5FF);
+            padding: 20px;
+        }
+        .tarjeta {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 420px;
+        }
+        h1 { text-align: center; color: #7C4DFF; margin-bottom: 5px; font-size: 26px; }
+        p.sub { text-align: center; color: #777; margin-bottom: 25px; font-size: 14px; }
+        label { display: block; margin-bottom: 6px; color: #333; font-weight: 600; font-size: 14px; }
+        input {
+            width: 100%; padding: 10px; margin-bottom: 16px;
+            border: 2px solid #00E5FF; border-radius: 10px; font-size: 15px;
+        }
+        input:focus { outline: none; border-color: #FF1E56; }
+        button {
+            width: 100%; padding: 13px;
+            background: linear-gradient(135deg, #FF1E56, #7C4DFF);
+            color: white; border: none; border-radius: 10px;
+            font-size: 17px; font-weight: bold; cursor: pointer; transition: transform 0.1s;
+        }
+        button:hover { transform: scale(1.03); }
+        .resultado {
+            margin-top: 25px; padding: 18px; border-radius: 12px; text-align: center;
+            background: #7CFC00; color: #1a1a1a; font-size: 20px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>🌸 Clasificador Iris</h1>
+        <p class="sub">Introduce las medidas de la flor (en cm)</p>
+        <form method="POST">
+            <label>Largo del sépalo</label>
+            <input type="number" step="0.1" name="largo_sepalo" placeholder="Ej: 5.1" required>
+
+            <label>Ancho del sépalo</label>
+            <input type="number" step="0.1" name="ancho_sepalo" placeholder="Ej: 3.5" required>
+
+            <label>Largo del pétalo</label>
+            <input type="number" step="0.1" name="largo_petalo" placeholder="Ej: 1.4" required>
+
+            <label>Ancho del pétalo</label>
+            <input type="number" step="0.1" name="ancho_petalo" placeholder="Ej: 0.2" required>
+
+            <button type="submit">Predecir especie</button>
+        </form>
+
+        {% if resultado %}
+        <div class="resultado">🌼 La flor es: {{ resultado }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
